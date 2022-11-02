@@ -120,10 +120,10 @@ function handleProjectiles() {
 // defenders
 const defenderTypes = [];
 const defender1 = new Image();
-defender1.src = '../source/img/zoroAnim1.png';
+defender1.src = './source/img/zoroAnim1.png';
 defenderTypes.push(defender1);
 const defender2 = new Image();
-defender2.src = '../source/img/luffyAnim1.png';
+defender2.src = './source/img/luffyAnim1.png';
 defenderTypes.push(defender2);
 
 class Defender {
@@ -287,10 +287,10 @@ function handleFloatingMessages() {
 //enemies
 const enemyTypes = [];
 const enemy1 = new Image();
-enemy1.src = '../source/img/kingAnim1.png';
+enemy1.src = './source/img/kingAnim1.png';
 enemyTypes.push(enemy1);
 const enemy2 = new Image();
-enemy2.src = '../source/img/ryumaAnim1.png';
+enemy2.src = './source/img/ryumaAnim1.png';
 enemyTypes.push(enemy2);
 
 class Enemy {
