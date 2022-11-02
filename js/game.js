@@ -7,7 +7,7 @@ canvas.height = 600;
 const cellSize = 100;
 const cellGap = 3;
 const gameGrid = [];
-const defenders =[];
+const defenders = [];
 let numberOfResources = 300;
 const enemies = [];
 const enemyPositions = [];
@@ -355,22 +355,35 @@ function handleEnemies() {
 	}
 }
 
-// resources
+const resourcesTypes = [];
+const resource1 = new Image();
+resource1.src = './source/img/meat.png';
+resourcesTypes.push(resource1);
+
+
 const amounts = [20, 30, 40];
 class Resource {
 	constructor() {
 		this.x = Math.random() * (canvas.width - cellSize);
 		this.y = (Math.floor(Math.random() * 5) + 1) * cellSize + 25;
-		this.width = cellSize * 0.6;
+		this.width = cellSize * 0.7;
 		this.height = cellSize * 0.6;
 		this.amount = amounts[Math.floor(Math.random() * amounts.length)];
+		this.frameX = 1;
+		this.frameY = 1;
+		this.minFrame = 0;
+		this.maxFrame = 0;
+		this.spriteWidth = 4456;
+		this.spriteHeight = 3654;
+		this.resourceType = resourcesTypes[Math.floor(Math.random() * resourcesTypes.length)];
 	}
+
 	draw() {
-		ctx.fillStyle = 'yellow';
-		ctx.fillRect(this.x, this.y, this.width, this.height);
+		//ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh);
+		ctx.drawImage(this.resourceType, this.frameX * this.width, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
 		ctx.fillStyle = 'black';
 		ctx.font = '20px Archivo Black'
-		ctx.fillText(this.amount, this.x + 15, this.y + 25);
+		ctx.fillText(this.amount, this.x + 13, this.y + 73);
 	}
 }
 function handleResources() {
