@@ -17,7 +17,7 @@ let frame = 0;
 let gameOver = false;
 const projectiles = [];
 const resources = [];
-const winningScore = 50;
+const winningScore = 500;
 let chosenDefender = 1;
 
 //mouse
